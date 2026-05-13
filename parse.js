@@ -1,43 +1,18 @@
-'use strict';
-var fs = require('fs');
+'use strict'
 
-/**
- * Parse the nodemon config file, supporting both old style
- * plain text config file, and JSON version of the config
- *
- * @param  {String}   filename
- * @param  {Function} callback
- */
-function parse(filename, callback) {
-  var rules = {
-    ignore: [],
-    watch: [],
-  };
-
-  fs.readFile(filename, 'utf8', function (err, content) {
-
-    if (err) {
-      return callback(err);
+const SemVer = require('../classes/semver')
+const parse = (version, options, throwErrors = false) => {
+  if (version instanceof SemVer) {
+    return version
+  }
+  try {
+    return new SemVer(version, options)
+  } catch (er) {
+    if (!throwErrors) {
+      return null
     }
-
-    var json = null;
-    try {
-      json = JSON.parse(content);
-    } catch (e) {}
-
-    if (json !== null) {
-      rules = {
-        ignore: json.ignore || [],
-        watch: json.watch || [],
-      };
-
-      return callback(null, rules);
-    }
-
-    // otherwise return the raw file
-    return callback(null, { raw: content.split(/\n/) });
-  });
+    throw er
+  }
 }
 
-module.exports = parse;
-
+module.exports = parse
