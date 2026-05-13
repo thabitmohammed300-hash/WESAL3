@@ -1,18 +1,4 @@
 {
-  "name": "wesal-chat",
-  "version": "1.0.0",
-  "description": "Wesal - Private chat for two people",
-  "main": "server.js",
-  "scripts": {
-    "start": "\"C:\\Temp\\nodejs\\node-v20.12.2-win-x64\\node.exe\" server.js",
-    "dev": "\"C:\\Temp\\nodejs\\node-v20.12.2-win-x64\\node.exe\" node_modules/.bin/nodemon server.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "socket.io": "^4.7.2",
-    "cors": "^2.8.5"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  }
+  "name": "@socket.io/component-emitter",
+  "type": "module"
 }
