@@ -1,0 +1,10 @@
+runtime: nodejs20
+instance_class: F1
+automatic_scaling:
+  min_instances: 1
+  max_instances: 10
+  target_cpu_utilization: 0.5
+
+handlers:
+- url: /.*
+  script: auto
