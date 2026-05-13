@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="chat-title-page">وصال - المحادثة</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <script src="/socket.io/socket.io.js"></script>
+  <div class="page-shell">
+    <!-- Language Selector -->
+    <div class="language-selector" style="position: absolute; top: 20px; left: 24px; z-index: 1000;">
+      <button class="lang-btn active" data-lang="ar">العربية</button>
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="de">Deutsch</button>
+    </div>
+
+    <!-- Landing Screen -->
+    <div id="landing" class="chat-container">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">وصال | Wesal</p>
+          <h1 data-i18n="start-conversation">ابدأ محادثتك الخاصة</h1>
+          <p class="hero-text" data-i18n="choose-option">
+            اختر ما إذا كنت تريد إنشاء غرفة جديدة أم الانضمام لغرفة موجودة.
+          </p>
+          <div class="hero-actions">
+            <button class="button primary" onclick="showCreate()" data-i18n="create-room">إنشاء غرفة جديدة</button>
+            <button class="button primary" onclick="showJoin()" data-i18n="join-existing">الانضمام لغرفة</button>
+            <a class="button ghost" href="index.html" data-i18n="back-home">العودة للرئيسية</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Room Screen -->
+    <div id="create-room" class="chat-container" style="display: none;">
+      <div class="join-form">
+        <h2 data-i18n="create-room-title">إنشاء غرفة جديدة</h2>
+        <div class="form-group">
+          <label for="create-room-id" data-i18n="room-id-label">معرف الغرفة:</label>
+          <input type="text" id="create-room-id" placeholder="أدخل معرف الغرفة" data-i18n-placeholder="room-id-placeholder" />
+        </div>
+        <div class="form-group">
+          <label for="create-room-password" data-i18n="room-password-label">كلمة المرور:</label>
+          <input type="password" id="create-room-password" placeholder="أدخل كلمة المرور" data-i18n-placeholder="room-password-placeholder" />
+        </div>
+        <div class="form-actions">
+          <button class="button primary" onclick="createRoom()" data-i18n="create">إنشاء</button>
+          <button class="button ghost" onclick="showLanding()" data-i18n="cancel">إلغاء</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Join Room Screen -->
+    <div id="join-room" class="chat-container" style="display: none;">
+      <div class="join-form">
+        <h2 data-i18n="join-room-title">انضم إلى غرفة</h2>
+        <div class="form-group">
+          <label for="room-id" data-i18n="room-id-label">معرف الغرفة:</label>
+          <input type="text" id="room-id" placeholder="أدخل معرف الغرفة" data-i18n-placeholder="room-id-placeholder" />
+        </div>
+        <div class="form-group">
+          <label for="room-password" data-i18n="room-password-label">كلمة المرور:</label>
+          <input type="password" id="room-password" placeholder="أدخل كلمة المرور" data-i18n-placeholder="room-password-placeholder" />
+        </div>
+        <div class="form-actions">
+          <button class="button primary" onclick="joinRoom()" data-i18n="join">انضم</button>
+          <button class="button ghost" onclick="showLanding()" data-i18n="cancel">إلغاء</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Screen -->
+    <div id="chat" class="chat-container" style="display: none;">
+      <div class="chat-header">
+        <h2><span data-i18n="room-label">غرفة:</span> <span id="current-room"></span></h2>
+        <button class="button ghost" onclick="leaveRoom()" data-i18n="leave-room">غادر الغرفة</button>
+      </div>
+      <div id="messages" class="messages"></div>
+      <div class="message-input-container">
+        <input type="text" id="message-input" placeholder="اكتب رسالتك..." data-i18n-placeholder="message-placeholder" onkeypress="handleKeyPress(event)" />
+        <label class="file-upload-button">
+          <input type="file" id="file-input" accept="image/*,video/*" onchange="handleFileSelect(event)" />
+          <span data-i18n="attach-file">أرفق صورة أو فيديو</span>
+        </label>
+        <button class="button primary" onclick="sendMessage()" data-i18n="send">إرسال</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html></content>
+<parameter name="filePath">c:\Users\admin\Desktop\موقع وصال\public\chat.html

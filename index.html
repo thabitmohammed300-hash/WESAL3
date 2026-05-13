@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>وصال | منصة دردشة خاصة</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <script src="/socket.io/socket.io.js"></script>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">وصال | Wesal</p>
+        <div class="language-selector">
+          <button class="lang-btn active" data-lang="ar">العربية</button>
+          <button class="lang-btn" data-lang="en">English</button>
+          <button class="lang-btn" data-lang="de">Deutsch</button>
+        </div>
+        <h1 data-i18n="hero-title">لأن بعض الأحاديث لا تحتاج إلا شخصين.</h1>
+        <p class="hero-text" data-i18n="hero-description">
+          منصّة محادثة خاصة بين شخصين فقط. بيئة هادئة وآمنة للتواصل الحقيقي بعيدًا عن المجموعات والتنبيهات والفوضى.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="chat.html" data-i18n="start-chat">ابدأ المحادثة</a>
+          <a class="button ghost" href="#vision" data-i18n="discover-more">اكتشف المزيد</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="card glass-card">
+          <span class="badge" data-i18n="private-badge">خاص لشخصين فقط</span>
+          <div class="chat-preview">
+            <div class="chat-header">
+              <div>
+                <span class="title" data-i18n="chat-title">دردشة وصال</span>
+                <span class="subtitle" data-i18n="chat-subtitle">هادئة - 🔒 خاصة</span>
+              </div>
+              <span class="status" data-i18n="connected">متصل</span>
+            </div>
+            <div class="bubble bubble-left" data-i18n="sample-msg-1">مرحبًا، كيف حالك اليوم يا ثابت؟</div>
+            <div class="bubble bubble-right" data-i18n="sample-msg-2">مرحبًا، تمام. أحب الشكل الهادئ هنا.</div>
+            <div class="bubble bubble-left bubble-muted" data-i18n="sample-msg-3">🎵 مزاج موسيقى</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section-grid">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="features-tag">المميزات الرئيسية</span>
+        <h2 data-i18n="features-title">تجربة دردشة تركز على شخصين فقط</h2>
+      </div>
+
+      <div class="feature-card">
+        <h3 data-i18n="feature-private-title">💬 محادثة خاصة</h3>
+        <p data-i18n="feature-private-desc">كل غرفة مخصصة لشخصين فقط. لا مجموعات، ولا منشورات عامة، ولا إزعاج.</p>
+      </div>
+      <div class="feature-card">
+        <h3 data-i18n="feature-instant-title">⚡ رسائل فورية</h3>
+        <p data-i18n="feature-instant-desc">إرسال واستقبال لحظي مع مؤشرات كتابة واتصال سريعة وخفيفة.</p>
+      </div>
+      <div class="feature-card">
+        <h3 data-i18n="feature-media-title">🎤 صوت وميديا</h3>
+        <p data-i18n="feature-media-desc">تسجيل صوتي، إرسال صور وملفات، معاينة داخل الدردشة وسحب وإفلات.</p>
+      </div>
+      <div class="feature-card">
+        <h3 data-i18n="feature-temporary-title">⏳ رسائل مؤقتة</h3>
+        <p data-i18n="feature-temporary-desc">اختر حذف الرسائل بعد القراءة، ساعة، 24 ساعة أو أسبوع.</p>
+      </div>
+      <div class="feature-card">
+        <h3 data-i18n="feature-mood-title">🎭 الحالة المزاجية</h3>
+        <p data-i18n="feature-mood-desc">اختر أجواء المحادثة من هادئة إلى رومانسية أو جلسة قهوة وتغيير ثيم كامل.</p>
+      </div>
+      <div class="feature-card">
+        <h3 data-i18n="feature-security-title">🔒 خصوصية وأمان</h3>
+        <p data-i18n="feature-security-desc">تشفير كامل، حماية ملفات، تسجيل دخول آمن، وقفل محادثة ببصمة أو كلمة مرور.</p>
+      </div>
+    </section>
+
+    <section id="vision" class="section-alt">
+      <div class="section-alt-copy">
+        <span class="section-tag" data-i18n="vision-tag">الرؤية</span>
+        <h2 data-i18n="vision-title">تصميم هادئ وعصري مع واجهة ديناميكية</h2>
+        <p data-i18n="vision-desc">
+          تجربة بصريّة مبسّطة مع مرئيات زجاجية وتدرجات ناعمة، دعم RTL للعربية وLTR للإنجليزية والألمانية، بالإضافة إلى الوضع الداكن والفاتح.
+        </p>
+        <div class="pill-list">
+          <span>React / Next.js</span>
+          <span>Tailwind CSS</span>
+          <span>Framer Motion</span>
+        </div>
+      </div>
+      <div class="section-alt-visual">
+        <div class="card mini-card">
+          <h3 data-i18n="identity-title">الهوية البصرية</h3>
+          <p data-i18n="identity-desc">بنفسجي هادئ، أسود عصري، أبيض ناعم مع خطوط Cairo وInter.</p>
+          <div class="swatch-row">
+            <span class="swatch swatch-purple"></span>
+            <span class="swatch swatch-black"></span>
+            <span class="swatch swatch-white"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p data-i18n="footer"> المطور ثابت وصال — مساحة دردشة خاصة، تركيز كامل على شخصين فقط.</p>
+    </footer>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
